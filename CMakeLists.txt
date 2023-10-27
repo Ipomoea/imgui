@@ -41,9 +41,9 @@ if (IMGUI_OPENGL3)
         add_compile_definitions(IMGUI_IMPL_OPENGL_LOADER_CUSTOM)
     endif()
 
-    target_include_directories(${PROJECT_NAME} PUBLIC 
-        ${CMAKE_CURRENT_SOURCE_DIR}/backends/mgui_impl_opengl3.h)
-    target_sources(${PROJECT_NAME} PRIVATE 
+    target_include_directories(${PROJECT_NAME} PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_opengl3.h)
+    target_sources(${PROJECT_NAME} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp)
 endif()
 
@@ -58,9 +58,9 @@ endif()
 
 if (IMGUI_IMPL_METAL_CPP)
     message(STATUS "ImGui: Building Metal")
-    target_include_directories(${PROJECT_NAME} PUBLIC 
+    target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_metal.h)
-    target_sources(${PROJECT_NAME} PRIVATE 
+    target_sources(${PROJECT_NAME} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_metal.cpp)
     target_link_libraries(${PROJECT_NAME} PUBLIC glfw)
 endif()
